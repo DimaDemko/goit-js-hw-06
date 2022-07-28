@@ -1,8 +1,12 @@
 const input = document.querySelector("#name-input");
 const output = document.querySelector("#name-output");
 
-input.addEventListener("keydown", (event) => {
-  if (event.currentTarget.value == "") {
+function enterText(event) {
+  if (event.target.value == "") {
     output.textContent = "Anonymous";
-  } else output.textContent = event.currentTarget.value;
-});
+  } else {
+    output.textContent = event.target.value;
+  }
+}
+
+input.addEventListener("input", enterText);
